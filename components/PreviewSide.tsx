@@ -2,38 +2,36 @@
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import React from "react";
 
-const PreviewSide = ({
+interface PreviewSideProps {
+    enableContactUs: boolean;
+    contactContent: string;
+    userName: string;
+    jobTitle: string;
+    phoneNumber: string;
+  }
+
+const PreviewSide: React.FC<PreviewSideProps> = ({
   enableContactUs,
   contactContent,
   userName,
   jobTitle,
   phoneNumber,
 }) => {
-  const handleCopySignature = async () => {
-    const signatureDiv = document.getElementById("signatureContent");
-    if (signatureDiv) {
-      try {
-        const clonedDiv = signatureDiv.cloneNode(true);
-        const svgs = clonedDiv.getElementsByTagName("svg");
-
-        for (let i = 0; i < svgs.length; i++) {
-          const svg = svgs[i];
-          const outerHTML = new XMLSerializer().serializeToString(svg);
-          const blob = new Blob([outerHTML], { type: "image/svg+xml" });
-          const url = URL.createObjectURL(blob);
-          svg.outerHTML = `<img src="${url}" />`;
+  
+    const handleCopySignature = async () => {
+        const signatureDiv = document.getElementById("signatureContent");
+        if (signatureDiv) {
+          try {
+            const html = signatureDiv.innerHTML;
+            const blob = new Blob([html], { type: "text/html" });
+            const data = [new ClipboardItem({ "text/html": blob })];
+            await navigator.clipboard.write(data);
+            alert("Signature copied to clipboard!");
+          } catch (err) {
+            console.error("Failed to copy text: ", err);
+          }
         }
-
-        const html = clonedDiv.innerHTML;
-        const blob = new Blob([html], { type: "text/html" });
-        const data = [new ClipboardItem({ "text/html": blob })];
-        await navigator.clipboard.write(data);
-        alert("Signature copied to clipboard!");
-      } catch (err) {
-        console.error("Failed to copy text: ", err);
-      }
-    }
-  };
+      };
 
   return (
     <Box padding={"32px"}>

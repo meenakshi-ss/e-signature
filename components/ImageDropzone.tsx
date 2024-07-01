@@ -17,7 +17,7 @@ const ImageDropzone = () => {
           border={'1px dashed #E2E6EB'}
         >
           <input {...getInputProps()} />
-          <Text color="gray" fontSize="small">Drag and drop or click to upload your image</Text>
+          <Text color="gray" fontSize="small">Feature under development</Text>
         </Flex>
       )}
     </Dropzone>

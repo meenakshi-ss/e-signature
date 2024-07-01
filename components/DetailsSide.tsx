@@ -12,7 +12,21 @@ import {
 import React from "react";
 import ImageDropzone from "./ImageDropzone";
 
-const DetailsSide = ({
+interface DetailsSideProps {
+    enableContactUs: boolean;
+    setEnableContactUs: (value: boolean) => void;
+    contactContent: string;
+    setContactContent: (value: string) => void;
+    userName: string;
+    setUserName: (value: string) => void;
+    jobTitle: string;
+    setJobTitle: (value: string) => void;
+    phoneNumber: string;
+    setPhoneNumber: (value: string) => void;
+  }
+
+
+  const DetailsSide: React.FC<DetailsSideProps>  = ({
   enableContactUs,
   setEnableContactUs,
   contactContent,
@@ -26,7 +40,13 @@ const DetailsSide = ({
 }) => {
   return (
     <Box padding="32px">
-      <Box borderBottom="1px solid #E2E6EB" paddingBottom={2}>
+      <Box
+        borderBottom="1px solid #E2E6EB"
+        paddingBottom={2}
+        cursor={"not-allowed"}
+        pointerEvents={"none"}
+        opacity={0.5}
+      >
         <Flex alignItems="center" justifyContent="space-between">
           <Flex gap="2px">
             <Text>Profile Picture</Text>
@@ -87,14 +107,14 @@ const DetailsSide = ({
         <Switch onChange={() => setEnableContactUs(!enableContactUs)} />
       </Flex>
       {enableContactUs && (
-            <Input
-              borderColor={"#E7E7E7"}
-              background="white"
-              value={contactContent}
-              onChange={(e) => setContactContent(e.target.value)}
-              marginTop={4}
-            />
-        )}
+        <Input
+          borderColor={"#E7E7E7"}
+          background="white"
+          value={contactContent}
+          onChange={(e) => setContactContent(e.target.value)}
+          marginTop={4}
+        />
+      )}
     </Box>
   );
 };

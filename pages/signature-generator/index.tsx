@@ -42,15 +42,10 @@ const SignatureGenerator = () => {
         <Box flex="0 0 70%" backgroundColor="white" borderRightRadius="16px">
           <PreviewSide
             enableContactUs={enableContactUs}
-            setEnableContactUs={setEnableContactUs}
             contactContent={contactContent}
-            setContactContent={setContactContent}
             userName={userName}
-            setUserName={setUserName}
             jobTitle={jobTitle}
-            setJobTitle={setJobTitle}
             phoneNumber={phoneNumber}
-            setPhoneNumber={setPhoneNumber}
           />
         </Box>
       </Flex>
