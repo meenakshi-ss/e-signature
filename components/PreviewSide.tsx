@@ -146,7 +146,7 @@ const PreviewSide: React.FC<PreviewSideProps> = ({
                         color: "#56B0BB",
                         fontWeight: 700,
                         border: "1px solid #56B0BB",
-                        background: "transparent",
+                        background: "white",
                       }}
                     >
                       {contactCTA}
