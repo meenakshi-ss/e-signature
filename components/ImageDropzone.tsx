@@ -1,8 +1,13 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import Dropzone from "react-dropzone";
 
+
 const ImageDropzone = () => {
+  const [imageUrl, setImageUrl] = useState('');
+  const [uploading, setUploading] = useState(false);
+
+
   return (
     <Dropzone>
       {({ getRootProps, getInputProps }) => (

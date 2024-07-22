@@ -9,7 +9,9 @@ const SignatureGenerator = () => {
   const [jobTitle, setJobTitle] = useState("Batman");
   const [phoneNumber, setPhoneNumber] = useState("+919876543210");
   const [enableContactUs, setEnableContactUs] = useState(false);
-  const [contactContent, setContactContent] = useState("");
+  const [contactContent, setContactContent] = useState("https://surveysparrow.com/");
+  const [enableImage, setEnableImage] = useState(false);
+  const [contactCTA, setContactCTA] = useState("Book a Demo");
 
   return (
     <Box
@@ -37,6 +39,10 @@ const SignatureGenerator = () => {
             setJobTitle={setJobTitle}
             phoneNumber={phoneNumber}
             setPhoneNumber={setPhoneNumber}
+            setEnableImage={setEnableImage}
+            enableImage={enableImage}
+            setContactCTA={setContactCTA}
+            contactCTA={contactCTA}
           />
         </Box>
         <Box flex="0 0 70%" backgroundColor="white" borderRightRadius="16px">
@@ -46,6 +52,8 @@ const SignatureGenerator = () => {
             userName={userName}
             jobTitle={jobTitle}
             phoneNumber={phoneNumber}
+            enableImage={enableImage}
+            contactCTA={contactCTA}
           />
         </Box>
       </Flex>
