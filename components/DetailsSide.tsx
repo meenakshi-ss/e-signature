@@ -8,6 +8,7 @@ import {
   Switch,
   Text,
   VStack,
+  Select,
 } from "@chakra-ui/react";
 import React from "react";
 import ImageDropzone from "./ImageDropzone";
@@ -115,7 +116,7 @@ const DetailsSide: React.FC<DetailsSideProps> = ({
       </Flex>
       {enableContactUs && (
         <Flex flexDirection="column" gap="12px" marginTop={"12px"}>
-          <FormControl>
+          {/* <FormControl>
             <FormLabel>Button CTA</FormLabel>
             <Input
               borderColor={"#E7E7E7"}
@@ -123,7 +124,18 @@ const DetailsSide: React.FC<DetailsSideProps> = ({
               value={contactCTA}
               onChange={(e) => setContactCTA(e.target.value)}
             />
-          </FormControl>
+          </FormControl> */}
+          <Select
+            placeholder="Select option"
+            background="white"
+            onChange={(e) => setContactCTA(e.target.value)}
+          >
+            <option value="Book a demo">Book a demo</option>
+            <option value="Let&apos;s connect">Let&apos;s connect</option>
+            <option value="Book a call">Book a call</option>
+            <option value="Schedule a call">Schedule a call</option>
+            <option value="Request demo">Request demo</option>
+          </Select>
           <FormControl>
             <FormLabel>CTA link</FormLabel>
             <Input

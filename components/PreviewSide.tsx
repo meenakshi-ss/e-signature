@@ -135,22 +135,24 @@ const PreviewSide: React.FC<PreviewSideProps> = ({
                     {phoneNumber}
                   </p>
                   {enableContactUs && (
-                    <button
-                      type="button"
-                      onClick={() => (window.location.href = contactContent)}
+                    <a
+                      href={contactContent}
                       style={{
                         fontSize: "14px",
-                        padding: "8px",
+                        padding: "8px 8px 8px 2px",
                         borderRadius: "12px",
                         marginTop: "8px",
                         color: "#56B0BB",
                         fontWeight: 700,
-                        border: "1px solid #56B0BB",
+                        border: "1px solid transparent",
                         background: "white",
+                        textDecoration: "none", 
+                        display: "inline-block",
+                        cursor: 'pointer'
                       }}
                     >
                       {contactCTA}
-                    </button>
+                    </a>
                   )}
                 </td>
               </tr>
