@@ -146,9 +146,9 @@ const PreviewSide: React.FC<PreviewSideProps> = ({
                         fontWeight: 700,
                         border: "1.2px solid #56B0BB",
                         background: "white",
-                        textDecoration: "none", 
                         display: "inline-block",
-                        cursor: 'pointer'
+                        cursor: "pointer",
+                        textDecoration: 'unset'
                       }}
                     >
                       {contactCTA}
