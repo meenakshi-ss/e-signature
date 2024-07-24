@@ -139,12 +139,12 @@ const PreviewSide: React.FC<PreviewSideProps> = ({
                       href={contactContent}
                       style={{
                         fontSize: "14px",
-                        padding: "8px 8px 8px 2px",
+                        padding: "8px",
                         borderRadius: "12px",
                         marginTop: "8px",
                         color: "#56B0BB",
                         fontWeight: 700,
-                        border: "1px solid transparent",
+                        border: "1.2px solid #56B0BB",
                         background: "white",
                         textDecoration: "none", 
                         display: "inline-block",
